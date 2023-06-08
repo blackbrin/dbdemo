@@ -1,4 +1,4 @@
-package xyz.soldo.dbdemo;
+package xyz.soldo.dbdemo.originway;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

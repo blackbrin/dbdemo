@@ -1,11 +1,10 @@
-package xyz.soldo.dbdemo.jdbc;
+package xyz.soldo.dbdemo.originway.jdbc;
 
-
-import xyz.soldo.dbdemo.Utils;
+import xyz.soldo.dbdemo.originway.Utils;
 
 import java.sql.*;
 
-import static xyz.soldo.dbdemo.Config.url;
+import static xyz.soldo.dbdemo.originway.Config.url;
 
 /***
  * 通过DriverManager获取数据库连接
@@ -17,6 +16,4 @@ public class DriverManagerWay {
         //Utils.getDataByStatement(connection);
         Utils.getDataByPrepareStatement(connection);
     }
-
-
 }

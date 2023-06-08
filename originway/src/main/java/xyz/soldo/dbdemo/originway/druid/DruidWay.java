@@ -1,8 +1,8 @@
-package xyz.soldo.dbdemo.druid;
+package xyz.soldo.dbdemo.originway.druid;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import xyz.soldo.dbdemo.Config;
-import xyz.soldo.dbdemo.Utils;
+import xyz.soldo.dbdemo.originway.Config;
+import xyz.soldo.dbdemo.originway.Utils;
 
 import java.sql.Connection;
 

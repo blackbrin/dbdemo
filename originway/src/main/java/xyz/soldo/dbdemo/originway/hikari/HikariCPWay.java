@@ -1,10 +1,9 @@
-package xyz.soldo.dbdemo.hikari;
+package xyz.soldo.dbdemo.originway.hikari;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import lombok.val;
-import xyz.soldo.dbdemo.Config;
-import xyz.soldo.dbdemo.Utils;
+import xyz.soldo.dbdemo.originway.Config;
+import xyz.soldo.dbdemo.originway.Utils;
 
 import java.sql.Connection;
 
@@ -24,7 +23,7 @@ public class HikariCPWay {
 
         HikariDataSource dataSource = new HikariDataSource(config);
         Connection connection = dataSource.getConnection();
-        Utils.getDataByPrepareStatement(connection);
+        System.out.println(Utils.getDataByPrepareStatement(connection));
         connection.close();
     }
 }

@@ -6,6 +6,25 @@
 
 ## 项目结构
 
+### 创建测试表
+    
+```sql
+create database dbdemo;
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user`  (
+`id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
+`phone` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '手机号码',
+`email` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci COMMENT '邮箱',
+`password` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '密码',
+`nick_name` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT '' COMMENT '昵称',
+`create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+`update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+PRIMARY KEY (`id`) USING BTREE,
+UNIQUE INDEX `uniqe_key_email`(`email`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1010 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Compact;
+```
+
 ### 通过原生JDBC操作数据库
 
 1. DataSource
@@ -60,13 +79,9 @@ public HikariConfig hikariConfig() {
 
 2.Spring集成 JPASpringWay
 
-### 通过spring data操作数据库
-
 ### 通过Mybatis操作数据库
 
-5.Mybatis Plus
 
-6.spring data
 
 ## 注意
 

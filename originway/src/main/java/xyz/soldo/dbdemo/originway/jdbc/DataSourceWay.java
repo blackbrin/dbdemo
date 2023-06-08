@@ -1,16 +1,13 @@
-package xyz.soldo.dbdemo.jdbc;
+package xyz.soldo.dbdemo.originway.jdbc;
 
 
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import com.mysql.cj.jdbc.MysqlXADataSource;
-import xyz.soldo.dbdemo.Utils;
+import xyz.soldo.dbdemo.originway.Utils;
 
-import javax.sql.ConnectionPoolDataSource;
-import javax.sql.DataSource;
-import javax.sql.XADataSource;
 import java.sql.Connection;
 
-import static xyz.soldo.dbdemo.Config.url;
+import static xyz.soldo.dbdemo.originway.Config.url;
 
 /***
  * 通过DataSource获取数据库连接
@@ -18,7 +15,7 @@ import static xyz.soldo.dbdemo.Config.url;
 public class DataSourceWay {
     public static void main(String[] args) throws Exception {
         doPoolDatasource();
-        //doXADatasource();
+        doXADatasource();
     }
 
     /***
@@ -34,7 +31,7 @@ public class DataSourceWay {
         poolDataSource.setPassword("123456");
         poolDataSource.setConnectTimeout(10);
         Connection connection = poolDataSource.getConnection();
-        Utils.getDataByPrepareStatement(connection);
+        System.out.println(Utils.getDataByPrepareStatement(connection));
         connection.close();
     }
 
@@ -49,7 +46,7 @@ public class DataSourceWay {
         MysqlXADataSource xaDataSource = new MysqlXADataSource();
         xaDataSource.setURL(url);
         Connection connection = xaDataSource.getConnection("root", "123456");
-        Utils.getDataByPrepareStatement(connection);
+        System.out.println(Utils.getDataByPrepareStatement(connection));
         connection.close();
     }
 }
